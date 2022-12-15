@@ -17,39 +17,7 @@ class _Home_Screen_State extends State<Home_Screen> {
         width: double.infinity,
         height: double.infinity,
         color: Colors.white70,
-        child: Column(
-          children: [
-            Expanded(
-              child: ListView(
-                children: <Widget>[
-                  Search_Widget(),
-                  SizedBox(
-                    height: 15,
-                    child: Container(
-                      color: Color(0xFFf5f6f7),
-                    ),
-                  ),
-                  // FutureBuilder(
-                  //   future: get_girls_products(),
-                  //   builder: (context, AsyncSnapshot snapshot) {
-                  //     var products = snapshot.data;
-
-                  //     if (snapshot.hasData) {
-                  //       return Products_Slider_Widget(
-                  //           products: products,
-                  //           title: translate("label_girls_selection"));
-                  //     } else if (snapshot.hasError) {
-                  //       return Text('Error: ${snapshot.error}');
-                  //     } else {
-                  //       return Circular_Progress_Widget();
-                  //     }
-                  //   },
-                  // ),
-                ],
-              ),
-            ),
-          ],
-        ),
+        child: Search_Widget(),
       ),
     );
   }
