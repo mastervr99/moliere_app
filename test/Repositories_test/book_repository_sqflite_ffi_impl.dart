@@ -64,6 +64,33 @@ class Book_Repository_Sqflite_Ffi_Impl extends Book_Repository {
   }
 
   @override
+  retrieve_all_books() async {
+    await _init_database();
+
+    var books_data = await database.rawQuery("SELECT * FROM books");
+
+    if (await books_data.isEmpty) {
+      await _close_database();
+
+      return [];
+    } else {
+      List<Book> books = [];
+
+      await books_data.forEach((book_data) {
+        Book book = Book();
+        book.set_title(book_data['book_title']);
+        book.set_url(book_data['book_url']);
+
+        books.add(book);
+      });
+
+      await _close_database();
+
+      return books;
+    }
+  }
+
+  @override
   _close_database() async {
     // final _database = await get_database();
     // database = null;

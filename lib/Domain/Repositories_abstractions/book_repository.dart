@@ -7,5 +7,7 @@ abstract class Book_Repository {
 
   retrieve_books_by_title(String book_title);
 
+  retrieve_all_books();
+
   _close_database();
 }
