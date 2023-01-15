@@ -52,7 +52,7 @@ class _Search_Widget_State extends State<Search_Widget> {
             style: ElevatedButton.styleFrom(
                 textStyle: const TextStyle(fontSize: 20)),
             onPressed: () async {
-              await createProductTable();
+              await createBooksTable();
             },
             child: const Text('Enabled'),
           ),
@@ -185,7 +185,7 @@ class _Search_Widget_State extends State<Search_Widget> {
   }
 }
 
-createProductTable() async {
+createBooksTable() async {
   Book_Repository book_repository = Book_Repository_Sqflite_Impl();
 
   WidgetsFlutterBinding.ensureInitialized();
