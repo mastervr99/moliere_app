@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:moliere_app/Application/common_widgets/Appbar_Widget.dart';
 import 'package:moliere_app/Application/common_widgets/Circular_Progress_Widget.dart';
 import 'package:moliere_app/Application/common_widgets/Search_Widget.dart';
+import 'package:moliere_app/Application/components/PDFViewerPage.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:advance_pdf_viewer/advance_pdf_viewer.dart';
 
@@ -157,28 +158,6 @@ class _Home_Screen_State extends State<Home_Screen> {
             loadDocument(context);
           },
           child: Text('Open PDF'),
-        ),
-      ),
-    );
-  }
-}
-
-class PDFViewerPage extends StatelessWidget {
-  final PDFDocument document;
-
-  PDFViewerPage({required this.document});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('PDF Viewer'),
-      ),
-      body: Center(
-        child: PDFViewer(
-          document: document,
-          scrollDirection: Axis.vertical,
-          lazyLoad: false,
         ),
       ),
     );
